@@ -1,4 +1,4 @@
-FROM banst/awscli
+FROM python:3.7-alpine3.9
 
 ENV KUBE_LATEST_VERSION="v1.17.3"
 ENV TERRAFORM_VERSION="0.12.21"
@@ -10,6 +10,7 @@ RUN apk add --update ca-certificates \
   && chmod +x /usr/local/bin/kubectl \
   && wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
   && unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin \
+  && pip install awscli \
   && apk del --purge deps \
   && rm /var/cache/apk/*
 
