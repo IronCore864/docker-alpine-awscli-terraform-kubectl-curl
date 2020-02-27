@@ -7,6 +7,7 @@ Alpine base, with:
 - terraform 0.12.21
 - kubectl 1.17.3
 - curl
+- helm3
 
 ## Build
 
