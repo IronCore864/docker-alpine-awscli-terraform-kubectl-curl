@@ -1,7 +1,7 @@
 FROM python:3.7-alpine3.9
 
 ENV KUBE_LATEST_VERSION="v1.17.3"
-ENV TERRAFORM_VERSION="0.12.21"
+ENV TERRAFORM_VERSION="0.12.28"
 ENV HELM_BASE_URL="https://get.helm.sh"
 ENV VERSION="3.1.1"
 ENV TAR_FILE="helm-v${VERSION}-linux-amd64.tar.gz"
@@ -19,5 +19,7 @@ RUN apk add --update curl ca-certificates \
   && rm -rf linux-amd64 \
   && apk del --purge deps \
   && rm /var/cache/apk/*
+
+USER 1000:1000
 
 ENTRYPOINT [ "/bin/sh" ]
