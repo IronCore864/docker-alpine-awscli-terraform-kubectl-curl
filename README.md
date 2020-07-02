@@ -28,3 +28,5 @@ When creating EKS/k8s with terraform, you might need to:
 - run kubectl to create resources using terraform local-exec
 
 That's why it's nice to have aws cli, tf, kubectl, curl all together.
+
+Run as user ID 1000.
